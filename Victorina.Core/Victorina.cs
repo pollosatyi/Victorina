@@ -4,12 +4,12 @@
     {
        
             public string Name { get; set; }
-            public int BookCount { get; set; }
+            public int QuestionCount { get; set; }
 
-            public V(string name, int bookCount)
+            public Victorina(string name, int questionCount)
             {
                 Name = name;
-                BookCount = bookCount;
+                QuestionCount = questionCount;
             }
         }
     
