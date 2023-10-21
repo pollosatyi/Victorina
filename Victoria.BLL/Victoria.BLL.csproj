@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Victorina.DAL\Victorina.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
