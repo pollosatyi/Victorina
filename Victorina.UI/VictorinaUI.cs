@@ -5,8 +5,9 @@ bool isRun = true;
 while (isRun)
 {
     Console.WriteLine("выбрать действие: ");
-    Console.WriteLine("1- выбрать викторину ");
-    Console.WriteLine("2- выйти ");
+    Console.WriteLine("1- создать викторину ");
+    Console.WriteLine("2- выбрать викторину ");
+    Console.WriteLine("3- выйти ");
 
     StartMenuEnum userInput;
     try
@@ -22,8 +23,11 @@ while (isRun)
 
     switch (userInput)
     {
+        case StartMenuEnum.СreateQuiz:
+
+            break;
         case StartMenuEnum.ChoizeQuiz:
-            VictorinaI.Victorina();
+           
             break;
         case StartMenuEnum.Exit:
             isRun = false;
