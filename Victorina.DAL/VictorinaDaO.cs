@@ -14,7 +14,7 @@ namespace Victorina.DAL
 
         public void Create(Quest quest)
         {
-            var quests = new List<Quest>();
+            var quests = new List<Quest>() ;
 
             if (File.Exists(PATH))
             {
