@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Victoria.BLL", "Victoria.BLL\Victoria.BLL.csproj", "{CDA18B3B-CE67-4576-AA75-7E058FC196CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Victoria.BLL", "Victoria.BLL\Victoria.BLL.csproj", "{CDA18B3B-CE67-4576-AA75-7E058FC196CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Victorina.UI", "Victorina.UI\Victorina.UI.csproj", "{7D60890F-8B98-4999-BFBE-9055140747AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Victorina.DAL", "Victorina.DAL\Victorina.DAL.csproj", "{6CFC27E2-4C9B-4A69-95DD-8C4447F3A6D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Victorina.DAL", "Victorina.DAL\Victorina.DAL.csproj", "{6CFC27E2-4C9B-4A69-95DD-8C4447F3A6D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Victorina.Core", "Victorina.Core\Victorina.Core.csproj", "{2BF5E019-EAB7-4F41-8F7C-3D8C0A29B8B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Victorina.Core", "Victorina.Core\Victorina.Core.csproj", "{2BF5E019-EAB7-4F41-8F7C-3D8C0A29B8B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictorinaUI", "VictorinaUI\VictorinaUI.csproj", "{908A32F5-D781-49D7-AF2F-120565007DA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{CDA18B3B-CE67-4576-AA75-7E058FC196CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA18B3B-CE67-4576-AA75-7E058FC196CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA18B3B-CE67-4576-AA75-7E058FC196CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D60890F-8B98-4999-BFBE-9055140747AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D60890F-8B98-4999-BFBE-9055140747AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D60890F-8B98-4999-BFBE-9055140747AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D60890F-8B98-4999-BFBE-9055140747AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CFC27E2-4C9B-4A69-95DD-8C4447F3A6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CFC27E2-4C9B-4A69-95DD-8C4447F3A6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CFC27E2-4C9B-4A69-95DD-8C4447F3A6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{2BF5E019-EAB7-4F41-8F7C-3D8C0A29B8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BF5E019-EAB7-4F41-8F7C-3D8C0A29B8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BF5E019-EAB7-4F41-8F7C-3D8C0A29B8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{908A32F5-D781-49D7-AF2F-120565007DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{908A32F5-D781-49D7-AF2F-120565007DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{908A32F5-D781-49D7-AF2F-120565007DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{908A32F5-D781-49D7-AF2F-120565007DA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
