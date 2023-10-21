@@ -8,8 +8,8 @@ namespace Victorina.UI
 {
     public enum StartMenuEnum
     {
-         ChoizeQuiz = 1,
-         Exit = 2,
-       
+         СreateQuiz = 1,
+         ChoizeQuiz = 2,
+         Exit = 3,
     }
 }
