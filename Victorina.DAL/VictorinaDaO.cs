@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Victorina.Core;
 
 namespace Victorina.DAL
 {
@@ -11,27 +12,27 @@ namespace Victorina.DAL
     {
         private const string PATH = "D:\\sergey t\\Victorina\\VictorinaJson\\victorina.json";
 
-        public void Create(Victorina victorina)
+        public void Create(Quest quest)
         {
-            var victorinas = new List<Victorina>();
+            var quests = new List<Quest>();
 
             if (File.Exists(PATH))
             {
                 using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
                 {
-                    victorinas = JsonSerializer.Deserialize<List<Victorina>>(fs);
+                    quests = JsonSerializer.Deserialize<List<Quest>>(fs);
                 }
             }
 
-            victorinas.Add(victorina);
-            Write(libraries);
+            quests.Add(quest);
+            Write(quests);
         }
 
-        private void Write(List<Victorina> victorina)
+        private void Write(List<Quest> quest)
         {
             using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
             {
-                JsonSerializer.Serialize<List<Victorina>>(fs, victorina);
+                JsonSerializer.Serialize<List<Quest>>(fs, quest);
             }
         }
     }

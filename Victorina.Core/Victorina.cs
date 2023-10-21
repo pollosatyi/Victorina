@@ -1,12 +1,12 @@
 ﻿namespace Victorina.Core
 {
-    public class Victorina
+    public class Quest
     {
        
             public string Name { get; set; }
             public int QuestionCount { get; set; }
 
-            public Victorina(string name, int questionCount)
+            public Quest(string name, int questionCount)
             {
                 Name = name;
                 QuestionCount = questionCount;

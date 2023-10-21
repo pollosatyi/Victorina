@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Victorina.Core;
 
-namespace Victorina.DAL
+namespace Victoria.BLL
 {
-    public interface IVictoryDaO
+    public interface IVictorinaService
     {
-        void Create(Quest quest);
+        public void Create(string name, int questionCount);
     }
 }
