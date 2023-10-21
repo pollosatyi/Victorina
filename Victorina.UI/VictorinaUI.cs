@@ -23,7 +23,7 @@ while (isRun)
     switch (userInput)
     {
         case StartMenuEnum.ChoizeQuiz:
-            VictorinaUI.Victorina();
+            VictorinaI.Victorina();
             break;
         case StartMenuEnum.Exit:
             isRun = false;
