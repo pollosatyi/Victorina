@@ -24,7 +24,7 @@ while (isRun)
     switch (userInput)
     {
         case StartMenuEnum.CreateQuiz:
-
+            Create();
             break;
         case StartMenuEnum.ChooseQuiz:
 
