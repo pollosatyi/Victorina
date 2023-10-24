@@ -47,7 +47,7 @@ namespace VictorinaUI
             newAnswer.Add(Console.ReadLine());
             Console.WriteLine("Введите 1 если ответ верный или 0, если неверный");
             int check = int.Parse(Console.ReadLine());
-            newAnswer.Add( (check != 0) ? ("True") : ("False"));
+            newAnswer.Add( (check != 0) ? ("True1") : ("False1"));
             return newAnswer;
 
         }
