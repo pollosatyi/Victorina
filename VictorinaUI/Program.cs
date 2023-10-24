@@ -1,4 +1,6 @@
-﻿bool isRun = true;
+﻿using VictorinaUI;
+
+bool isRun = true;
 
 while (isRun)
 {
@@ -11,7 +13,6 @@ while (isRun)
     try
     {
         userInput = (StartMenuEnum)Convert.ToInt32(Console.ReadLine());
-
     }
     catch
     {
@@ -21,10 +22,10 @@ while (isRun)
 
     switch (userInput)
     {
-        case StartMenuEnum.СreateQuiz:
+        case StartMenuEnum.CreateQuiz:
 
             break;
-        case StartMenuEnum.ChoizeQuiz:
+        case StartMenuEnum.ChooseQuiz:
 
             break;
         case StartMenuEnum.Exit:
