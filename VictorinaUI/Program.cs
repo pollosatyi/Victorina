@@ -1,4 +1,6 @@
-﻿using VictorinaUI;
+﻿using Victoria.BLL;
+using Victorina.Core;
+using VictorinaUI;
 
 bool isRun = true;
 
@@ -24,7 +26,8 @@ while (isRun)
     switch (userInput)
     {
         case StartMenuEnum.CreateQuiz:
-            Create();
+            //Quiz quiz();
+            //VictorinaService.Create();
             break;
         case StartMenuEnum.ChooseQuiz:
 

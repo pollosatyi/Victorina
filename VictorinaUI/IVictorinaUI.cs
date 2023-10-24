@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Victoria.BLL
+namespace VictorinaUI
 {
-    public interface IVictorinaService
+    internal interface IVictorinaUI
     {
-        public void Create();
     }
 }

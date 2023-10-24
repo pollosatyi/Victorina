@@ -7,7 +7,7 @@ namespace Victoria.BLL
     public class VictorinaService : IVictorinaService
     {
         private readonly IVictoryDaO _victoryDao = new VictorinaDaO();
-        public void Create(string question, Dictionary<bool, string> answers)
+        public void Create()
         {
             var quiz = new Quiz(InitQuestion(), InitAnswers());
             _victoryDao.Create(quiz);
