@@ -8,6 +8,6 @@ namespace Victoria.BLL
 {
     public interface IVictorinaService
     {
-        public void Create(string name, int questionCount);
+        public void Create();
     }
 }

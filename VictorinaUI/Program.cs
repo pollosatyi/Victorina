@@ -8,6 +8,7 @@ while (isRun)
     Console.WriteLine("1- создать викторину ");
     Console.WriteLine("2- выбрать викторину ");
     Console.WriteLine("3- выйти ");
+    
 
     StartMenuEnum userInput;
     try

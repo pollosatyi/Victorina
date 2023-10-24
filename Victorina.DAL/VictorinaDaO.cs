@@ -10,29 +10,29 @@ namespace Victorina.DAL
 {
     public class VictorinaDaO : IVictoryDaO
     {
-        private const string PATH = "D:\\sergey t\\Victorina\\VictorinaJson\\victorina.json";
+        private const string PATH = "D:\\Parsing\\victorina.json";
 
-        public void Create(Quest quest)
+        public void Create(Quiz quiz)
         {
-            var quests = new List<Quest>() ;
+            var quizzes = new List<Quiz>() ;
 
             if (File.Exists(PATH))
             {
                 using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
                 {
-                    quests = JsonSerializer.Deserialize<List<Quest>>(fs);
+                    quizzes = JsonSerializer.Deserialize<List<Quiz>>(fs);
                 }
             }
 
-            quests.Add(quest);
-            Write(quests);
+            quizzes.Add(quiz);
+            Write(quizzes);
         }
 
-        private void Write(List<Quest> quest)
+        private void Write(List<Quiz> quest)
         {
             using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
             {
-                JsonSerializer.Serialize<List<Quest>>(fs, quest);
+                JsonSerializer.Serialize<List<Quiz>>(fs, quest);
             }
         }
     }

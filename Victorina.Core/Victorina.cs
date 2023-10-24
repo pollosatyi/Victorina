@@ -1,15 +1,15 @@
 ﻿namespace Victorina.Core
 {
-    public class Quest
+    public class Quiz
     {
        
-            public string Name { get; set; }
-            public int QuestionCount { get; set; }
+            public string _question { get; set; }
+        public Dictionary<bool, string> _answers = new Dictionary<bool, string>();
 
-            public Quest(string name, int questionCount)
+            public Quiz(string question,Dictionary<bool,string> answers)
             {
-                Name = name;
-                QuestionCount = questionCount;
+
+                
             }
         }
     
