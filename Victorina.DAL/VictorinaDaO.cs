@@ -10,7 +10,7 @@ namespace Victorina.DAL
 {
     public class VictorinaDaO : IVictoryDaO
     {
-        private const string PATH = "D:\\Parsing\\victorina.json";
+        private const string PATH = "C:\\Parsing\\victorina.json";
 
         public void Create(Quiz quiz)
         {

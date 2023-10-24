@@ -14,7 +14,7 @@ namespace VictorinaUI
         public static  void CreateVictorina()
         {
            string question=InitQuestion();
-           Dictionary<bool,string>answers = new Dictionary<bool,string>(InitAnswers());
+           List<List<string>> answers = new List<List<string>>(InitAnswers());
             _victorinaService.Create(question,answers);
 
         }
@@ -30,22 +30,26 @@ namespace VictorinaUI
         }
 
 
-        private static Dictionary<bool, string> InitAnswers()
+        private static List<List<string>> InitAnswers()
         {
-            Dictionary<bool, string> answers = new Dictionary<bool, string>();
+            List<List<string>> answers = new List<List<string>>();
             for (int i = 0; i < 4; i++)
             {
-                string answer = "";
-                int check = 0;
-                bool IsRightAnswer;
-                Console.WriteLine("Введите ответ: ");
-                answer = Console.ReadLine();
-                Console.WriteLine("Если ответ неверный нажмите 0 или любую цифру если верный ");
-                check = int.Parse(Console.ReadLine());
-                IsRightAnswer = (check != 0) ? (true) : (false);
-                answers.Add(IsRightAnswer, answer);
+                answers.Add(InitAnswer());
             }
             return answers;
+        }
+
+        private static List<string> InitAnswer()
+        {
+            List<string> newAnswer= new List<string>();
+            Console.WriteLine("Введите ответ: ");
+            newAnswer.Add(Console.ReadLine());
+            Console.WriteLine("Введите 1 если ответ верный или 0, если неверный");
+            int check = int.Parse(Console.ReadLine());
+            newAnswer.Add( (check != 0) ? ("True") : ("False"));
+            return newAnswer;
+
         }
 
     }
