@@ -9,7 +9,7 @@ namespace Victoria.BLL
         private readonly IVictoryDaO _victoryDao = new VictorinaDaO();
         public void Create()
         {
-            var quiz = new Quiz(InitQuestion(), InitAnswers());
+            var quiz = new Quiz( question, InitAnswers());
             _victoryDao.Create(quiz);
         }
 
