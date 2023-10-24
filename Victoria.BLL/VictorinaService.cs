@@ -7,9 +7,9 @@ namespace Victoria.BLL
     public class VictorinaService : IVictorinaService
     {
         private readonly IVictoryDaO _victoryDao = new VictorinaDaO();
-        public void Create()
+        public void Create(string question, Dictionary<bool, string> answers)
         {
-            var quiz= new Quiz(InitQuestion(),InitAnswers());
+            var quiz = new Quiz(InitQuestion(), InitAnswers());
             _victoryDao.Create(quiz);
         }
 
@@ -21,25 +21,25 @@ namespace Victoria.BLL
             return question;
         }
 
-        public Dictionary<bool,string> InitAnswers()
+        public Dictionary<bool, string> InitAnswers()
         {
             Dictionary<bool, string> answers = new Dictionary<bool, string>();
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
-                string answer="";
+                string answer = "";
                 int check = 0;
                 bool IsRightAnswer;
                 Console.WriteLine("Введите ответ: ");
                 answer = Console.ReadLine();
                 Console.WriteLine("Если ответ неверный нажмите 0 или любую цифру если верный ");
                 check = int.Parse(Console.ReadLine());
-                IsRightAnswer = (check!=0)?(true):(false);
-                answers.Add(IsRightAnswer,answer);
+                IsRightAnswer = (check != 0) ? (true) : (false);
+                answers.Add(IsRightAnswer, answer);
             }
             return answers;
         }
 
-       
+
     }
 
 }

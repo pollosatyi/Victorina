@@ -14,7 +14,7 @@ namespace Victorina.DAL
 
         public void Create(Quiz quiz)
         {
-            var quizzes = new List<Quiz>() ;
+            var quizzes = new List<Quiz>();
 
             if (File.Exists(PATH))
             {

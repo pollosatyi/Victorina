@@ -8,7 +8,7 @@ namespace VictorinaUI
 {
     public enum StartMenuEnum
     {
-        CreateQuiz=1,
+        CreateQuiz = 1,
         ChooseQuiz,
         Exit
     }
