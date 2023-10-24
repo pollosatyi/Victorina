@@ -10,6 +10,7 @@ namespace VictorinaUI
     {
         CreateQuiz = 1,
         ChooseQuiz,
+        Clear,
         Exit
     }
 }

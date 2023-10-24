@@ -7,9 +7,10 @@ bool isRun = true;
 while (isRun)
 {
     Console.WriteLine("выбрать действие: ");
-    Console.WriteLine("1- создать викторину ");
-    Console.WriteLine("2- выбрать викторину ");
-    Console.WriteLine("3- выйти ");
+    Console.WriteLine("1 - создать викторину ");
+    Console.WriteLine("2 - выбрать викторину ");
+    Console.WriteLine("3 - очистить консоль");
+    Console.WriteLine("4- выйти ");
 
 
     StartMenuEnum userInput;
@@ -26,11 +27,14 @@ while (isRun)
     switch (userInput)
     {
         case StartMenuEnum.CreateQuiz:
-            //Quiz quiz();
-            //VictorinaService.Create();
+
+            CreateVictorinaUI.CreateVictorina();
             break;
         case StartMenuEnum.ChooseQuiz:
 
+            break;
+        case StartMenuEnum.Clear:
+            Console.Clear();
             break;
         case StartMenuEnum.Exit:
             isRun = false;
