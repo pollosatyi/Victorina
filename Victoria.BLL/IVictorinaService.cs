@@ -8,6 +8,6 @@ namespace Victoria.BLL
 {
     public interface IVictorinaService
     {
-        public void Create();
+        public void Create(string question, Dictionary<bool,string> answers);
     }
 }
