@@ -13,6 +13,10 @@ namespace Victoria.BLL
             _victoryDao.Create(quiz);
         }
 
+        public List<Quiz> Play() { 
+            return _victoryDao.Play();
+
+        }
         
 
         

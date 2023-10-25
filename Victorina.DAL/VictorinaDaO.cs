@@ -27,6 +27,13 @@ namespace Victorina.DAL
             Write(quizzes);
         }
 
+        public  List<Quiz> Play()
+        {
+            var quizzes= new List<Quiz>();
+            quizzes = FileReader(PATH);
+            return quizzes;
+        }
+
         private void Write(List<Quiz> quest)
         {
             using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))

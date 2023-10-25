@@ -8,7 +8,7 @@ while (isRun)
 {
     Console.WriteLine("выбрать действие: ");
     Console.WriteLine("1 - создать викторину ");
-    Console.WriteLine("2 - выбрать викторину ");
+    Console.WriteLine("2 - сыграть в  викторину ");
     Console.WriteLine("3 - очистить консоль");
     Console.WriteLine("4- выйти ");
 
@@ -30,8 +30,8 @@ while (isRun)
 
             CreateVictorinaUI.CreateVictorina();
             break;
-        case StartMenuEnum.ChooseQuiz:
-
+        case StartMenuEnum.PlayQuiz:
+            PlayVictorinaUI.PlayVictorina();
             break;
         case StartMenuEnum.Clear:
             Console.Clear();

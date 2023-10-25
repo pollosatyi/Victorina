@@ -10,5 +10,6 @@ namespace Victorina.DAL
     public interface IVictoryDaO
     {
         void Create(Quiz quest);
+        List<Quiz> Play();
     }
 }
