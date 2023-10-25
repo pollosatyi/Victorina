@@ -22,32 +22,16 @@ namespace Victorina.DAL
             {
                 using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
                 {
-                   using (StreamReader sr = new StreamReader(fs))
+                    using (StreamReader sr = new StreamReader(fs))
                     {
-                        string json= sr.ReadToEnd();
-                        Console.Write(json);
-                        // dynamic Data = JsonConvert.DeserializeObject(json);
-                        //foreach(var item1 in Data)
-                        //{
-                        //    List<string> list1 = new List<string>();
-                        //    foreach(var item2 in item1)
-                        //    {
-                        //        list1.Add(item2.ToString());
-                        //    }
-                        //    quizzesString.Add(list1);
-                        //}
+                        string json = sr.ReadToEnd();
+                        quizzes = DeserializeQuiz(json);
                     }
-                    
                 }
             }
-            //string json = "[{ \"_question\":\"1\",\"_answers\":[[\"1\",\"True1\"],[\"2\",\"False1\"],[\"3\",\"False1\"],[\"4\",\"False1\"]]}]";
+
             quizzes.Add(quiz);
             Write(quizzes);
-        }
-
-        private  List<string> r (FileStream fs)
-        {
-            throw new NotImplementedException();
         }
 
         private void Write(List<Quiz> quest)
@@ -56,6 +40,45 @@ namespace Victorina.DAL
             {
                 System.Text.Json.JsonSerializer.Serialize<List<Quiz>>(fs, quest);
             }
+        }
+
+        private List<Quiz> DeserializeQuiz(string json)
+        {
+            var quizzes = new List<Quiz>();
+            string[] jsonMassString = json.Split('{');
+            int jsonMassStringCount = jsonMassString.Length;
+
+            for (int i = 1; i < jsonMassStringCount; i++)
+            {
+                List<List<string>> newList = new List<List<string>>();
+
+                int indexOfQuestionStart = jsonMassString[i].IndexOf(':');
+                int indexofQuestionEnd = jsonMassString[i].IndexOf(',');
+                int sizeQuestion = indexofQuestionEnd - indexOfQuestionStart;
+                string question = jsonMassString[i].Substring(indexOfQuestionStart + 2, sizeQuestion - 3);
+                string[] jsonAnswers = jsonMassString[i].Split("_answers\":[");
+
+                string[] jsonAnswersBlok = jsonAnswers[1].Split(']');
+                for (int j = 0; j < 4; j++)
+                {
+                    string answerBlok = "";
+                    string answerBool = "";
+                    int indexOfAnswerBlokEnd = 0;
+                    int indexOfAnswerBool = 0;
+                    jsonAnswersBlok[j] = jsonAnswersBlok[j].TrimStart(',', '[', '\"').TrimEnd('\"');
+                    indexOfAnswerBlokEnd = jsonAnswersBlok[j].IndexOf('\"');
+                    indexOfAnswerBool = jsonAnswersBlok[j].IndexOf(',') + 2;
+                    answerBlok = jsonAnswersBlok[j].Substring(0, indexOfAnswerBlokEnd);
+                    answerBool = jsonAnswersBlok[j].Substring(indexOfAnswerBool);
+                    List<string> newList2 = new List<string>() { answerBlok, answerBool };
+                    newList.Add(newList2);
+
+                }
+                Quiz newQuiz = new Quiz(question, newList);
+                quizzes.Add(newQuiz);
+
+            }
+            return quizzes;
         }
     }
 }
