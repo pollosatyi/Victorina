@@ -20,14 +20,7 @@ namespace Victorina.DAL
 
             if (File.Exists(PATH))
             {
-                using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
-                {
-                    using (StreamReader sr = new StreamReader(fs))
-                    {
-                        string json = sr.ReadToEnd();
-                        quizzes = DeserializeQuiz(json);
-                    }
-                }
+                quizzes = FileReader(PATH);
             }
 
             quizzes.Add(quiz);
@@ -40,6 +33,20 @@ namespace Victorina.DAL
             {
                 System.Text.Json.JsonSerializer.Serialize<List<Quiz>>(fs, quest);
             }
+        }
+
+        private List<Quiz> FileReader(string Path)
+        {
+            var quizzes = new List<Quiz>();
+            using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
+            {
+                using (StreamReader sr = new StreamReader(fs))
+                {
+                    string json = sr.ReadToEnd();
+                    quizzes = DeserializeQuiz(json);
+                }
+            }
+            return quizzes;
         }
 
         private List<Quiz> DeserializeQuiz(string json)
