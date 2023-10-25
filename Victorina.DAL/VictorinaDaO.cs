@@ -27,9 +27,9 @@ namespace Victorina.DAL
             Write(quizzes);
         }
 
-        public  List<Quiz> Play()
+        public List<Quiz> Play()
         {
-            var quizzes= new List<Quiz>();
+            var quizzes = new List<Quiz>();
             quizzes = FileReader(PATH);
             return quizzes;
         }

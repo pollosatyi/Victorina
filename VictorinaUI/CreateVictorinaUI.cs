@@ -11,11 +11,11 @@ namespace VictorinaUI
     {
         private static IVictorinaService _victorinaService = new VictorinaService();
 
-        public static  void CreateVictorina()
+        public static void CreateVictorina()
         {
-           string question=InitQuestion();
-           List<List<string>> answers = new List<List<string>>(InitAnswers());
-            _victorinaService.Create(question,answers);
+            string question = InitQuestion();
+            List<List<string>> answers = new List<List<string>>(InitAnswers());
+            _victorinaService.Create(question, answers);
 
         }
 
@@ -42,12 +42,12 @@ namespace VictorinaUI
 
         private static List<string> InitAnswer()
         {
-            List<string> newAnswer= new List<string>();
+            List<string> newAnswer = new List<string>();
             Console.WriteLine("Введите ответ: ");
             newAnswer.Add(Console.ReadLine());
             Console.WriteLine("Введите 1 если ответ верный или 0, если неверный");
             int check = int.Parse(Console.ReadLine());
-            newAnswer.Add( (check != 0) ? ("True") : ("False"));
+            newAnswer.Add((check != 0) ? ("True") : ("False"));
             return newAnswer;
 
         }
