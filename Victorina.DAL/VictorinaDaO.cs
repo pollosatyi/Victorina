@@ -25,21 +25,22 @@ namespace Victorina.DAL
                    using (StreamReader sr = new StreamReader(fs))
                     {
                         string json= sr.ReadToEnd();
-                         dynamic Data = JsonConvert.DeserializeObject(json);
-                        foreach(var item1 in Data)
-                        {
-                            List<string> list1 = new List<string>();
-                            foreach(var item2 in item1)
-                            {
-                                list1.Add(item2.ToString());
-                            }
-                            quizzesString.Add(list1);
-                        }
+                        Console.Write(json);
+                        // dynamic Data = JsonConvert.DeserializeObject(json);
+                        //foreach(var item1 in Data)
+                        //{
+                        //    List<string> list1 = new List<string>();
+                        //    foreach(var item2 in item1)
+                        //    {
+                        //        list1.Add(item2.ToString());
+                        //    }
+                        //    quizzesString.Add(list1);
+                        //}
                     }
                     
                 }
             }
-
+            //string json = "[{ \"_question\":\"1\",\"_answers\":[[\"1\",\"True1\"],[\"2\",\"False1\"],[\"3\",\"False1\"],[\"4\",\"False1\"]]}]";
             quizzes.Add(quiz);
             Write(quizzes);
         }
